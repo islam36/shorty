@@ -1,22 +1,4 @@
-<style>
-    #shorty{
-        background-color: white;
-        width: 100%;
-        height: auto;
-        padding: 10px;
-        margin: 10px;
-    }
-
-    #shorty h1 {
-        text-align: center;
-        color: hsl(216, 100%, 50%);
-        font-weight: 800;
-    }
-</style>
-<div id="shorty">
-    <h1>SHORTY</h1>
-</div>
-
+# Shorty
 Shorty is another free and open source link shortener. The name 'shorty' stands for 'short' or 'turn a long link to a short one'. It's just a personal project to apply what I learned and having fun!
 
 # features
