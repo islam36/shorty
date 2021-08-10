@@ -8,6 +8,7 @@ import Main from './Main';
 import Edit from './Edit';
 import Add from './Add';
 import Home from './Home';
+import NotFound from './404';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const App = () => {
@@ -48,30 +49,17 @@ const App = () => {
     {
       parent: Route,
       path: '/notFound',
-      component: () => <div>not found </div>,
+      component: NotFound,
     },
     {
       parent: Route,
       path: '/*',
-      component: () => <Redirect to="/notFound" />
+      component: NotFound
     }
   ]
 
 
-  // return (
-  //   <BrowserRouter basename="main">
-  //     <Switch>
-  //       <PublicRoute exact path="/" component={Home} />
-  //       <PublicRoute exact path="/login" component={Login} />
-  //       <PublicRoute exact path="/register" component={Regiser} />
-  //       <PrivateRoute exact path="/app" component={Main} />
-  //       <PrivateRoute exact path="/edit/:id" component={Edit} />
-  //       <PrivateRoute exact path="/add" component={Add} />
-  //       <Route exact path="/notFound" component={() => <div>not found</div>} />
-  //       <Route exact path="/*" component={() => <div>not found</div>} />
-  //     </Switch>
-  //   </BrowserRouter>
-  // )
+  
 
 
   return (

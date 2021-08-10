@@ -29,7 +29,7 @@ const Main = () => {
   }
 
   useEffect(() => {
-    document.title = 'Shorty | app';
+    document.title = 'Shorty';
   }, []);
 
   let linksList = null;

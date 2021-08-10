@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   FaMoneyBill,
   FaLock,
@@ -82,6 +82,10 @@ const Home = () => {
     </div>
   ));
 
+  useEffect(() => {
+    document.title = "Shorty";
+  }, []);
+
   return (
     <>
       <main>
@@ -89,7 +93,7 @@ const Home = () => {
           <h1>Shorty</h1>
           <p>Just another free and open source link shortenr</p>
           <div className="hero__btns">
-            <Link to="/login" className="hero__btn btn-primary">Get started</Link>
+            <Link to="/register" className="hero__btn btn-primary">Get started</Link>
             <a href="#features" className="hero__btn btn-secondary">Learn more</a>
           </div>
           <FaArrowDown className="hero__arrow-icon" />

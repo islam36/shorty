@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { serverUrl } from '../util';
 import Loading from './Loading';
 import Modal from './Modal';
@@ -159,11 +159,18 @@ const Edit = () => {
           originalLink.current.value = json.link.link;
           shortLink.current.value = json.link.shortLink;
         } else {
+          if (response.status === 404) {
+            history.push('/notFound');
+            return;
+          }
+          
           setModal({
             ...modal,
             active: true,
             title: 'Error',
-            content: `${json.message}`
+            content: (<div>
+              {json.message}. Try to refresh the page or Click <Link to="/app">here</Link> to go back to your list of links.
+            </div>)
           });
         }
       } catch (err) {
@@ -173,7 +180,9 @@ const Edit = () => {
           ...modal,
           active: true,
           title: 'Error',
-          content: `${err.message}`
+          content: (<div>
+            {err.message}. Try to refresh the page or Click <Link to="/app">here</Link> to go back to your list of links.
+          </div>)
         });
       }
     }

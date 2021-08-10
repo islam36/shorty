@@ -583,6 +583,20 @@ section {
     transition: all 300ms ;
 }
 
+.container_404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container_404 h1 {
+    font-size: 36px;
+    color: var(--blue);
+    text-align: center;
+    max-width: 250px;
+}
 
 
 @media (max-width: 380px) {
